@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carvalho Engenharia - Construindo o futuro com inovação e qualidade</title>
+    <meta name="description" content="Soluções completas em engenharia civil, elétrica e mecânica. Projetos, execução e acompanhamento de obras com excelência.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-orange': '#ec7542',
+                        'brand-orange-light': '#f49968',
+                        'brand-beige': '#efeeec',
+                        'brand-gray': '#636163',
+                        'brand-gray-dark': '#4a4a4a'
+                    },
+                    fontFamily: {
+                        'sans': ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif']
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out'
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(30px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card-hover-glow {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover-glow:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(236, 117, 66, 0.15);
+        }
+        
+        .hero-blob {
+            background: linear-gradient(45deg, #ec7542, #f49968, #ec7542);
+            border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+            animation: blob 8s infinite;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #ec7542, #f49968);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-link.active {
+            background: rgba(236, 117, 66, 0.1);
+            color: #ec7542;
+        }
+        
+        .hamburger-lines span {
+            transition: all 0.3s ease;
+        }
+        
+        .stats-counter {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .hexagon {
+            width: 100px;
+            height: 100px;
+            clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, #ec7542, #f49968);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(2) {
+            animation-delay: 2s;
+        }
+        
+        .floating-element:nth-child(3) {
+            animation-delay: 4s;
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
+        }
+        
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bg-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(236, 117, 66, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(244, 153, 104, 0.1) 0%, transparent 50%);
+        }
+        
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #ec7542, transparent);
+            height: 1px;
+            width: 100px;
+            margin: 0 auto;
+        }
+        
+        .feature-highlight {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .feature-highlight:hover::before {
+            left: 100%;
+        }
+        
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ec7542, #f49968);
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+        
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #ec7542;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 1rem;
+        }
+        
+        .modal-content {
+            position: relative;
+            z-index: 100000;
+            transition: all 0.3s ease;
+            transform: scale(0.95);
+            opacity: 0;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            background-color: white;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 1rem;
+        }
+        
+        .modal-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-visible .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, #ec7542, #f49968);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: #ec7542;
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .interactive-element {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .interactive-element:hover {
+            transform: scale(1.05);
+        }
+        
+        .section-bg-pattern {
+            background-image: 
+                linear-gradient(45deg, rgba(236, 117, 66, 0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(236, 117, 66, 0.05) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(236, 117, 66, 0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(236, 117, 66, 0.05) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        
+        /* Melhorias responsivas */
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+            
+            .modal-content {
+                margin: 0.5rem;
+            }
+        }
+        
+        /* Melhorias visuais */
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .backdrop-blur-strong {
+            backdrop-filter: blur(25px);
+        }
+        
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-brand-gray font-sans overflow-x-hidden smooth-scroll">
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="text-center">
+            <div class="spinner mb-4"></div>
+            <p class="text-brand-gray">Carregando...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scroll-indicator"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white z-50 transition-all duration-300 shadow-md" id="main-header">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center group cursor-pointer" onclick="scrollToSection('home')">
+                    <img src="logo_carvalho.jpg" alt="Logo Carvalho Engenharia" class="h-14 w-auto mr-3" style="max-width:180px;">
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <button onclick="scrollToSection('home')" class="nav-link px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-brand-orange/10 text-brand-gray hover:text-brand-orange">Início</button>
+                    <button onclick="scrollToSection('servicos')" class="nav-link px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-brand-orange/10 text-brand-gray hover:text-brand-orange">Serviços</button>
+                    <button onclick="scrollToSection('sobre')" class="nav-link px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-brand-orange/10 text-brand-gray hover:text-brand-orange">Sobre</button>
+                    <button onclick="scrollToSection('projetos')" class="nav-link px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-brand-orange/10 text-brand-gray hover:text-brand-orange">Projetos</button>
+                    <button onclick="scrollToSection('contato')" class="nav-link px-4 py-2 rounded-full font-medium transition-all duration-300 hover:bg-brand-orange/10 text-brand-gray hover:text-brand-orange">Contato</button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300" onclick="toggleMobileMenu()">
+                    <div class="hamburger-lines">
+                        <span class="block w-6 h-0.5 bg-brand-gray mb-1"></span>
+                        <span class="block w-6 h-0.5 bg-brand-gray mb-1"></span>
+                        <span class="block w-6 h-0.5 bg-brand-gray"></span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden transition-all duration-300 max-h-0 opacity-0 overflow-hidden" id="mobile-nav">
+                <nav class="py-4 space-y-2">
+                    <button onclick="scrollToSection('home')" class="block w-full text-left px-4 py-2 text-brand-gray hover:text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-colors duration-300">Início</button>
+                    <button onclick="scrollToSection('servicos')" class="block w-full text-left px-4 py-2 text-brand-gray hover:text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-colors duration-300">Serviços</button>
+                    <button onclick="scrollToSection('sobre')" class="block w-full text-left px-4 py-2 text-brand-gray hover:text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-colors duration-300">Sobre</button>
+                    <button onclick="scrollToSection('projetos')" class="block w-full text-left px-4 py-2 text-brand-gray hover:text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-colors duration-300">Projetos</button>
+                    <button onclick="scrollToSection('contato')" class="block w-full text-left px-4 py-2 text-brand-gray hover:text-brand-orange hover:bg-brand-orange/10 rounded-lg transition-colors duration-300">Contato</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 pb-16 bg-gradient-to-br from-brand-orange via-brand-orange-light to-brand-orange text-white overflow-hidden min-h-screen flex items-center">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="floating-element absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-xl"></div>
+            <div class="floating-element absolute top-40 right-20 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+            <div class="floating-element absolute bottom-20 left-1/4 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
+        </div>
+
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 space-y-8 animate-on-scroll">
+                    <div class="space-y-6">
+                        <!-- Badge -->
+                        <div class="inline-flex items-center px-4 py-2 bg-white/20 rounded-full backdrop-blur-sm">
+                            <div class="w-2 h-2 bg-white rounded-full mr-2 pulse-ring"></div>
+                            <span class="text-sm font-medium">Desde 2019</span>
+                        </div>
+
+                        <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-shadow text-balance">
+                            Construindo o futuro com inovação e qualidade
+                        </h1>
+                        <p class="hero-subtitle text-xl text-orange-100 leading-relaxed text-balance">
+                            Soluções completas em controle tecnológico, construção civil e infraestrutura para transformar seus projetos em realidade com excelência técnica e responsabilidade.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="scrollToSection('contato')" class="group bg-white text-brand-orange px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center feature-highlight">
+                            <span class="text-sm sm:text-base">Solicite um orçamento</span>
+                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </button>
+                        <button onclick="openVideoModal()" class="group glass-effect text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-play mr-2"></i>
+                            <span class="text-sm sm:text-base">Ver demonstração</span>
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/20">
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl font-bold stats-counter" data-count="150">0</div>
+                            <div class="text-orange-200 text-xs sm:text-sm">Projetos Concluídos</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl font-bold stats-counter" data-count="5">0</div>
+                            <div class="text-orange-200 text-xs sm:text-sm">Anos de Experiência</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl sm:text-3xl font-bold stats-counter" data-count="100">0</div>
+                            <div class="text-orange-200 text-xs sm:text-sm">% Satisfação</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 animate-on-scroll">
+                    <div class="relative">
+                        <!-- Main Image with Blob Effect -->
+                        <div class="relative">
+                            <div class="absolute inset-0 hero-blob opacity-20"></div>
+                            <img src="https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                                 alt="Construção e Engenharia" 
+                                 class="relative rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500 w-full">
+                        </div>
+
+                        <!-- Floating Cards -->
+                        <div class="absolute -top-6 -left-6 bg-white rounded-xl shadow-lg p-4 animate-float">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gradient-to-br from-brand-orange to-brand-orange-light rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-award text-white text-sm"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-semibold text-brand-gray">Certificação</p>
+                                    <p class="text-xs text-brand-gray">ISO 9001</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-4 animate-float" style="animation-delay: 2s;">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-leaf text-white text-sm"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-semibold text-brand-gray">Sustentabilidade</p>
+                                    <p class="text-xs text-brand-gray">Projetos Verdes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden">
+            <svg class="relative block w-full" style="height: 70px;" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-white"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-gradient-to-b from-white to-gray-50 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <div class="inline-flex items-center justify-center p-2 mb-4 bg-white rounded-full shadow-sm">
+                    <div class="flex items-center justify-center w-10 h-10 bg-brand-orange rounded-full">
+                        <i class="text-white fas fa-tools"></i>
+                    </div>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Nossos Serviços</h2>
+                <div class="section-divider mb-6"></div>
+                <p class="text-xl text-brand-gray max-w-2xl mx-auto">
+                    Oferecemos soluções completas em engenharia com foco na excelência, inovação e sustentabilidade
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Controle Tecnológico -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-microscope text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-brand-orange transition-colors duration-300">
+                        Controle Tecnológico
+                    </h3>
+                    
+                    <p class="text-brand-gray mb-6 leading-relaxed">
+                        Análise e controle de qualidade de materiais com laboratório próprio, garantindo a conformidade técnica dos seus projetos.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Controle de solos
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Controle de asfalto
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Controle de concreto
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Laudos técnicos
+                        </li>
+                    </ul>
+
+                    <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
+                        Saiba mais
+                    </button>
+                </div>
+
+                <!-- Construção Civil -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-building text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-brand-orange transition-colors duration-300">
+                        Construção Civil
+                    </h3>
+                    
+                    <p class="text-brand-gray mb-6 leading-relaxed">
+                        Execução e acompanhamento de obras residenciais, comerciais e industriais com qualidade e prazo garantidos.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Execução de obras
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Reformas
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Projetos estruturais
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Acompanhamento técnico
+                        </li>
+                    </ul>
+
+                    <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
+                        Saiba mais
+                    </button>
+                </div>
+
+                <!-- Infraestrutura -->
+                <div class="service-card group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-road text-white text-2xl"></i>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4 group-hover:text-brand-orange transition-colors duration-300">
+                        Infraestrutura
+                    </h3>
+                    
+                    <p class="text-brand-gray mb-6 leading-relaxed">
+                        Serviços de terraplenagem, infraestrutura urbana e manutenção rodoviária com equipamentos modernos.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Terraplenagem
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Infraestrutura urbana
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Manutenção rodoviária
+                        </li>
+                        <li class="flex items-center text-brand-gray">
+                            <i class="fas fa-check-circle text-brand-orange mr-3 text-sm"></i>
+                            Pavimentação
+                        </li>
+                    </ul>
+
+                    <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0">
+                        Saiba mais
+                    </button>
+                </div>
+            </div>
+
+            <!-- Additional Services -->
+            <div class="mt-16 bg-gradient-to-r from-brand-orange to-brand-orange-light rounded-2xl p-8 text-white animate-on-scroll">
+                <div class="grid md:grid-cols-2 items-center gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Serviços Especializados</h3>
+                        <p class="text-orange-100 mb-6">
+                            Além dos nossos serviços principais, oferecemos soluções especializadas para atender às necessidades específicas de cada projeto.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-clipboard-check text-white mr-2"></i>
+                                <span class="text-sm">Ensaios Laboratoriais</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-tools text-white mr-2"></i>
+                                <span class="text-sm">Controle de Qualidade</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-hard-hat text-white mr-2"></i>
+                                <span class="text-sm">Segurança do Trabalho</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-file-alt text-white mr-2"></i>
+                                <span class="text-sm">Documentação Técnica</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-flex items-center justify-center w-32 h-32 bg-white/20 rounded-full mb-4">
+                            <i class="fas fa-tools text-white text-4xl"></i>
+                        </div>
+                        <p class="text-orange-100">Soluções personalizadas para cada necessidade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-gradient-to-br from-brand-orange/5 to-brand-beige/30 relative section-bg-pattern">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 animate-on-scroll">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-brand-orange/20 to-brand-beige/50 rounded-3xl blur-2xl"></div>
+                        <img src="https://images.pexels.com/photos/3862599/pexels-photo-3862599.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                             alt="Equipe Carvalho Engenharia" 
+                             class="relative rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500 w-full">
+                        
+                        <!-- Overlay Stats -->
+                        <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-4">
+                            <div class="grid grid-cols-3 gap-4 text-center">
+                                <div>
+                                    <div class="text-2xl font-bold text-brand-orange">5+</div>
+                                    <div class="text-xs text-brand-gray">Anos</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-brand-orange">150+</div>
+                                    <div class="text-xs text-brand-gray">Projetos</div>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-brand-orange">100%</div>
+                                    <div class="text-xs text-brand-gray">Qualidade</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 space-y-8 animate-on-scroll">
+                    <div>
+                        <div class="inline-flex items-center justify-center p-2 mb-4 bg-white rounded-full shadow-sm">
+                            <div class="flex items-center justify-center w-10 h-10 bg-brand-orange rounded-full">
+                                <i class="text-white fas fa-users"></i>
+                            </div>
+                        </div>
+                        <h2 class="text-4xl font-bold text-gray-800 mb-6">Sobre a Carvalho Engenharia</h2>
+                        <div class="section-divider mb-6"></div>
+                        <div class="space-y-4 text-brand-gray leading-relaxed">
+                            <p>
+                                Fundada em 2019, a Carvalho Engenharia iniciou suas atividades com foco no segmento de controle tecnológico de solos, asfalto e concreto. Ao longo dos anos, a empresa ampliou sua área de atuação, incorporando ao seu portfólio a execução de obras de construção civil, além de serviços de reformas, terraplenagem, infraestrutura e manutenção rodoviária.
+                            </p>
+                            <p>
+                                Com compromisso com a excelência, inovação contínua e responsabilidade técnica, a Carvalho Engenharia consolida sua presença no setor, oferecendo soluções eficientes e de alta qualidade para atender às demandas do mercado.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-bold text-gray-800">Nossa Jornada</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    2019
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Fundação</h4>
+                                    <p class="text-brand-gray text-sm">Início das atividades com foco em controle tecnológico</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 bg-brand-orange-light rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    2021
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Expansão</h4>
+                                    <p class="text-brand-gray text-sm">Ampliação para execução de obras e reformas</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-brand-orange to-brand-orange-light rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    2024
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Consolidação</h4>
+                                    <p class="text-brand-gray text-sm">Referência em soluções completas de engenharia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-24 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <div class="inline-flex items-center justify-center p-2 mb-4 bg-white rounded-full shadow-sm">
+                    <div class="flex items-center justify-center w-10 h-10 bg-brand-orange rounded-full">
+                        <i class="text-white fas fa-compass"></i>
+                    </div>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Nossos Valores</h2>
+                <div class="section-divider mb-6"></div>
+                <p class="text-xl text-brand-gray max-w-2xl mx-auto">
+                    Os princípios que norteiam nossa atuação e garantem a excelência em cada projeto
+                </p>
+            </div>
+
+            <!-- Values Grid -->
+            <div class="grid sm:grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Missão -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 feature-highlight card-hover-glow animate-on-scroll border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-brand-orange to-brand-orange-light rounded-3xl flex items-center justify-center mb-8 mx-auto">
+                        <i class="fas fa-bullseye text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Missão</h3>
+                    <p class="text-brand-gray leading-relaxed text-center text-lg">
+                        Projetar, construir, fiscalizar e entregar empreendimentos com excelência de forma a contribuir com o desenvolvimento urbano social e privado.
+                    </p>
+                </div>
+
+                <!-- Visão -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 feature-highlight card-hover-glow animate-on-scroll border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-brand-orange to-brand-orange-light rounded-3xl flex items-center justify-center mb-8 mx-auto">
+                        <i class="fas fa-eye text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Visão</h3>
+                    <p class="text-brand-gray leading-relaxed text-center text-lg">
+                        Consolidar-se como referência no setor da engenharia civil, destacando-se pela inovação contínua, pela excelência técnica e pela singularidade na prestação de serviços.
+                    </p>
+                </div>
+
+                <!-- Valores -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 feature-highlight card-hover-glow animate-on-scroll border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-brand-orange to-brand-orange-light rounded-3xl flex items-center justify-center mb-8 mx-auto">
+                        <i class="fas fa-heart text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Valores</h3>
+                    <p class="text-brand-gray leading-relaxed text-center text-lg">
+                        Compromisso, Responsabilidade, Integridade, Ética, Sustentabilidade, Qualidade e Transparência.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projetos" class="py-24 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <div class="inline-flex items-center justify-center p-2 mb-4 bg-white rounded-full shadow-sm">
+                    <div class="flex items-center justify-center w-10 h-10 bg-brand-orange rounded-full">
+                        <i class="text-white fas fa-project-diagram"></i>
+                    </div>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Nossos Projetos</h2>
+                <div class="section-divider mb-6"></div>
+                <p class="text-xl text-brand-gray max-w-2xl mx-auto">
+                    Conheça alguns dos projetos que desenvolvemos com excelência e inovação
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Projeto Residencial" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="font-semibold">Projeto Residencial</h4>
+                            <p class="text-sm">Construção Civil</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Edifício Residencial Premium</h3>
+                        <p class="text-brand-gray mb-4">Projeto completo de edifício residencial com 20 apartamentos, incluindo estrutura, instalações e acabamentos de alto padrão.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-brand-orange font-medium">Concluído em 2023</span>
+                            <button class="text-brand-orange hover:text-brand-orange-light transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Projeto Industrial" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="font-semibold">Controle Tecnológico</h4>
+                            <p class="text-sm">Análise de Materiais</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Complexo Industrial</h3>
+                        <p class="text-brand-gray mb-4">Controle tecnológico completo para complexo industrial, incluindo análise de solos, concreto e materiais de construção.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-brand-orange font-medium">Concluído em 2024</span>
+                            <button class="text-brand-orange hover:text-brand-orange-light transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                             alt="Projeto Rodoviário" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h4 class="font-semibold">Infraestrutura</h4>
+                            <p class="text-sm">Manutenção Rodoviária</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Manutenção Rodoviária</h3>
+                        <p class="text-brand-gray mb-4">Projeto de manutenção e modernização de 15km de rodovia, incluindo pavimentação, terraplenagem e controle de qualidade.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-brand-orange font-medium">Em andamento</span>
+                            <button class="text-brand-orange hover:text-brand-orange-light transition-colors">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="mt-16 text-center animate-on-scroll">
+                <div class="bg-gradient-to-r from-brand-orange to-brand-orange-light rounded-2xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-4">Tem um projeto em mente?</h3>
+                    <p class="text-orange-100 mb-6 max-w-2xl mx-auto">
+                        Nossa equipe está pronta para transformar suas ideias em realidade. Entre em contato e vamos conversar sobre seu próximo projeto.
+                    </p>
+                    <button onclick="scrollToSection('contato')" class="bg-white text-brand-orange px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                        Iniciar Projeto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-gradient-to-br from-brand-gray-dark to-brand-gray text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-brand-orange/20 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 animate-on-scroll">
+                    <div class="inline-flex items-center justify-center p-2 mb-4 bg-white/10 rounded-full backdrop-blur-sm">
+                        <div class="flex items-center justify-center w-10 h-10 bg-brand-orange rounded-full">
+                            <i class="text-white fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-4xl font-bold mb-4">Fale Conosco</h2>
+                    <div class="section-divider mb-6"></div>
+                    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                        Entre em contato e vamos transformar seu projeto em realidade com excelência e inovação
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8 animate-on-scroll">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-white">Entre em contato</h3>
+                            <div class="space-y-6">
+                                <!-- Phone -->
+                                <div class="flex items-center space-x-4 group">
+                                    <div class="w-14 h-14 bg-brand-orange rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-phone text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-white">Telefone</p>
+                                        <p class="text-gray-200">(XX) XXXX-XXXX</p>
+                                        <p class="text-gray-300 text-sm">Segunda a Sexta, 8h às 18h</p>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="flex items-center space-x-4 group">
+                                    <div class="w-14 h-14 bg-brand-orange rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-envelope text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-white">E-mail</p>
+                                        <p class="text-gray-200">contato@carvalhoengenharia.com.br</p>
+                                        <p class="text-gray-300 text-sm">Resposta em até 24h</p>
+                                    </div>
+                                </div>
+
+                                <!-- Address -->
+                                <div class="flex items-center space-x-4 group">
+                                    <div class="w-14 h-14 bg-brand-orange rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fas fa-map-marker-alt text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-white">Endereço</p>
+                                        <p class="text-gray-200">Rua da Engenharia, 123 - Centro</p>
+                                        <p class="text-gray-300 text-sm">Cidade - Estado, CEP 00000-000</p>
+                                    </div>
+                                </div>
+
+                                <!-- WhatsApp -->
+                                <div class="flex items-center space-x-4 group">
+                                    <div class="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                        <i class="fab fa-whatsapp text-white text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-white">WhatsApp</p>
+                                        <p class="text-gray-200">(XX) 9XXXX-XXXX</p>
+                                        <p class="text-gray-300 text-sm">Atendimento rápido</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div>
+                            <h4 class="text-lg font-semibold mb-4 text-white">Siga-nos</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300 group">
+                                    <i class="fab fa-facebook text-white group-hover:scale-110 transition-transform duration-300"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300 group">
+                                    <i class="fab fa-instagram text-white group-hover:scale-110 transition-transform duration-300"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300 group">
+                                    <i class="fab fa-linkedin text-white group-hover:scale-110 transition-transform duration-300"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="glass-effect p-6 sm:p-8 rounded-2xl border border-white/10 animate-on-scroll backdrop-blur-strong">
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="nome" class="block text-sm font-medium text-white mb-2">
+                                        Nome completo *
+                                    </label>
+                                    <input type="text" id="nome" name="nome" required
+                                           class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300"
+                                           placeholder="Seu nome completo">
+                                </div>
+
+                                <div>
+                                    <label for="telefone" class="block text-sm font-medium text-white mb-2">
+                                        Telefone
+                                    </label>
+                                    <input type="tel" id="telefone" name="telefone"
+                                           class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300"
+                                           placeholder="(XX) XXXXX-XXXX">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-white mb-2">
+                                    E-mail *
+                                </label>
+                                <input type="email" id="email" name="email" required
+                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300"
+                                       placeholder="seu@email.com">
+                            </div>
+
+                            <div>
+                                <label for="servico" class="block text-sm font-medium text-white mb-2">
+                                    Serviço de interesse
+                                </label>
+                                <select id="servico" name="servico"
+                                        class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300">
+                                    <option value="">Selecione um serviço</option>
+                                    <option value="civil">Engenharia Civil</option>
+                                    <option value="eletrica">Engenharia Elétrica</option>
+                                    <option value="mecanica">Engenharia Mecânica</option>
+                                    <option value="consultoria">Consultoria</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="mensagem" class="block text-sm font-medium text-white mb-2">
+                                    Mensagem *
+                                </label>
+                                <textarea id="mensagem" name="mensagem" required rows="4"
+                                          class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300 resize-none"
+                                          placeholder="Conte-nos sobre seu projeto..."></textarea>
+                            </div>
+
+                            <div class="flex items-start">
+                                <input type="checkbox" id="aceito" name="aceito" required class="mt-1 mr-3">
+                                <label for="aceito" class="text-sm text-white">
+                                    Aceito os <a href="#" class="text-brand-orange hover:underline">termos de uso</a> e <a href="#" class="text-brand-orange hover:underline">política de privacidade</a> *
+                                </label>
+                            </div>
+
+                            <button type="submit"
+                                    class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-4 rounded-lg font-semibold hover:from-brand-orange-light hover:to-brand-orange transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group">
+                                <span class="mr-2">Enviar mensagem</span>
+                                <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-gray py-12 border-t border-gray-700 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 flex items-center justify-center mr-3">
+                            <img src="logo_carvalho.svg" alt="Logo Carvalho Engenharia" class="h-16 w-auto brightness-0 invert" style="max-width:200px;">
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Soluções completas em controle tecnológico, construção civil e infraestrutura com foco na excelência, inovação e sustentabilidade.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300">
+                            <i class="fab fa-facebook text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300">
+                            <i class="fab fa-linkedin text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300">Controle Tecnológico</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300">Construção Civil</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300">Infraestrutura</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300">Consultoria</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">
+                            <i class="fas fa-phone mr-2 text-white"></i>
+                            (XX) XXXX-XXXX
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-white"></i>
+                            contato@carvalhoengenharia.com.br
+                        </li>
+                        <li class="text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2 text-white"></i>
+                            Rua da Engenharia, 123
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-center md:text-left mb-4 md:mb-0">
+                        © 2024 Carvalho Engenharia. Todos os direitos reservados.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300 text-sm">Política de Privacidade</a>
+                        <a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300 text-sm">Termos de Uso</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="modal-overlay">
+        <div class="modal-content max-w-4xl mx-6 overflow-hidden" style="aspect-ratio: 16/9;">
+            <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50">
+                <h3 class="text-lg font-medium text-gray-900">
+                    Demonstração - Carvalho Engenharia
+                </h3>
+                <button type="button" id="close-video-modal" class="text-gray-400 bg-transparent cursor-pointer hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <i class="fas fa-times w-5 h-5"></i>
+                    <span class="sr-only">Fechar modal</span>
+                </button>
+            </div>
+            <div class="relative w-full" style="height: calc(100% - 65px);">
+                <iframe 
+                    id="youtube-iframe"
+                    width="100%" 
+                    height="100%" 
+                    src="" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="p-8 text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-check text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Mensagem Enviada!</h3>
+                <p class="text-gray-600 mb-6">Obrigado pelo contato. Retornaremos em breve!</p>
+                <button onclick="closeSuccessModal()" class="bg-brand-orange text-white px-6 py-2 rounded-lg hover:bg-brand-orange-light transition-colors duration-300">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
