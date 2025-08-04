@@ -12,8 +12,8 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-orange': '#ec7542',
-                        'brand-orange-light': '#f49968',
+                        'brand-orange': '#ff6600',
+                        'brand-orange-light': '#ff8533',
                         'brand-beige': '#efeeec',
                         'brand-gray': '#636163',
                         'brand-gray-dark': '#4a4a4a'
@@ -75,17 +75,17 @@
         
         .card-hover-glow:hover {
             transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(236, 117, 66, 0.15);
+            box-shadow: 0 25px 50px rgba(255, 102, 0, 0.15);
         }
         
         .hero-blob {
-            background: linear-gradient(45deg, #ec7542, #f49968, #ec7542);
+            background: linear-gradient(45deg, #ff6600, #ff8533, #ff6600);
             border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
             animation: blob 8s infinite;
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, #ec7542, #f49968);
+            background: linear-gradient(135deg, #ff6600, #ff8533);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -98,8 +98,8 @@
         }
         
         .nav-link.active {
-            background: rgba(236, 117, 66, 0.1);
-            color: #ec7542;
+            background: rgba(255, 102, 0, 0.1);
+            color: #ff6600;
         }
         
         .hamburger-lines span {
@@ -124,12 +124,62 @@
         }
         
         .service-icon {
-            background: linear-gradient(135deg, #ec7542, #f49968);
+            background: linear-gradient(135deg, #ff6600, #ff8533);
             transition: all 0.3s ease;
         }
         
         .service-card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .service-card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .service-card-description {
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .service-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-items-container {
+            min-height: 200px;
+            max-height: 200px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ff6600 #f1f1f1;
+        }
+        
+        .service-items-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .service-items-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .service-items-container::-webkit-scrollbar-thumb {
+            background: #ff6600;
+            border-radius: 10px;
+        }
+        
+        .service-items-container::-webkit-scrollbar-thumb:hover {
+            background: #ff8533;
         }
         
         .floating-element {
@@ -165,12 +215,12 @@
         
         .bg-pattern {
             background-image: 
-                radial-gradient(circle at 25% 25%, rgba(236, 117, 66, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(244, 153, 104, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 25% 25%, rgba(255, 102, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 133, 51, 0.1) 0%, transparent 50%);
         }
         
         .section-divider {
-            background: linear-gradient(90deg, transparent, #ec7542, transparent);
+            background: linear-gradient(90deg, transparent, #ff6600, transparent);
             height: 1px;
             width: 100px;
             margin: 0 auto;
@@ -202,7 +252,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #ec7542, #f49968);
+            background: linear-gradient(90deg, #ff6600, #ff8533);
             transform-origin: left;
             transform: scaleX(0);
             z-index: 9999;
@@ -232,7 +282,7 @@
             width: 50px;
             height: 50px;
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #ec7542;
+            border-top: 3px solid #ff6600;
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
@@ -296,7 +346,7 @@
             top: 0;
             width: 2px;
             height: 100%;
-            background: linear-gradient(180deg, #ec7542, #f49968);
+            background: linear-gradient(180deg, #ff6600, #ff8533);
             transform: translateX(-50%);
         }
         
@@ -306,7 +356,7 @@
             top: 2rem;
             width: 16px;
             height: 16px;
-            background: #ec7542;
+            background: #ff6600;
             border: 4px solid white;
             border-radius: 50%;
             transform: translateX(-50%);
@@ -358,10 +408,10 @@
         
         .section-bg-pattern {
             background-image: 
-                linear-gradient(45deg, rgba(236, 117, 66, 0.05) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(236, 117, 66, 0.05) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(236, 117, 66, 0.05) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(236, 117, 66, 0.05) 75%);
+                linear-gradient(45deg, rgba(255, 102, 0, 0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255, 102, 0, 0.05) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255, 102, 0, 0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255, 102, 0, 0.05) 75%);
             background-size: 20px 20px;
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
@@ -480,19 +530,15 @@
                             Garantindo a qualidade que sustenta o futuro
                         </h1>
                         <p class="hero-subtitle text-xl text-orange-100 leading-relaxed text-balance">
-                            Soluções precisas em controle tecnológico de solos, concreto e asfalto, com foco em qualidade, segurança e responsabilidade técnica por sua obra.
+                            Soluções precisas em controle tecnológico de solos, concreto e asfalto, com foco em qualidade, segurança e responsabilidade técnica para sua obra.
                         </p>
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="scrollToSection('contato')" class="group bg-white text-brand-orange px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center feature-highlight">
+                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar um orçamento para meu projeto." target="_blank" class="group bg-white text-brand-orange px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center feature-highlight">
                             <span class="text-sm sm:text-base">Solicite um orçamento</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-                        </button>
-                        <button onclick="openVideoModal()" class="group glass-effect text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-white/20 transition-all duration-300 flex items-center justify-center">
-                            <i class="fas fa-play mr-2"></i>
-                            <span class="text-sm sm:text-base">Ver demonstração</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -519,17 +565,7 @@
                             </div>
                         </div>
 
-                        <div class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-4 animate-float" style="animation-delay: 2s;">
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-leaf text-white text-sm"></i>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-sm font-semibold text-brand-gray">Sustentabilidade</p>
-                                    <p class="text-xs text-brand-gray">Projetos Verdes</p>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -540,320 +576,6 @@
             <svg class="relative block w-full" style="height: 70px;" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="fill-white"></path>
             </svg>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="servicos" class="py-24 bg-gradient-to-b from-white to-gray-50 relative">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 animate-on-scroll">
-                <div class="inline-flex items-center justify-center p-2 mb-4 bg-white rounded-full shadow-sm">
-                    <div class="flex items-center justify-center w-10 h-10 bg-brand-orange rounded-full">
-                        <i class="text-white fas fa-tools"></i>
-                    </div>
-                </div>
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Serviços</h2>
-                <div class="section-divider mb-6"></div>
-                <p class="text-xl text-brand-gray max-w-2xl mx-auto">
-                    Oferecemos soluções completas em engenharia com foco na excelência, inovação e sustentabilidade
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Controle Tecnológico de Concreto -->
-                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    
-                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
-                        <img src="images/CONCRETO.jpg" 
-                             alt="Controle Tecnológico de Concreto" 
-                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-                    
-                    <div class="p-6 pt-0">
-                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
-                            Controle Tecnológico de Concreto
-                        </h3>
-                        
-                        <p class="text-brand-gray mb-4 leading-relaxed text-sm">
-                            Ensaios completos para controle de qualidade do concreto, garantindo conformidade técnica.
-                        </p>
-
-                        <ul class="space-y-2 mb-4 text-sm">
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Ensaios de Resistência à Compressão</span>
-                            </li>
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Resistência à Tração na Flexão</span>
-                            </li>
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Acompanhamento Técnico</span>
-                            </li>
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Slump Test e Moldagem</span>
-                            </li>
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Extração de Testemunhos</span>
-                            </li>
-                        </ul>
-
-                        <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm">
-                            Solicite uma cotação
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Controle Tecnológico de Solos -->
-                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    
-                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
-                        <img src="images/SOLOS.jpg" 
-                             alt="Controle Tecnológico de Solos" 
-                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-                    
-                    <div class="p-6 pt-0">
-                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
-                            Controle Tecnológico de Solos
-                        </h3>
-                        
-                        <p class="text-brand-gray mb-4 leading-relaxed text-sm">
-                            Análises completas de características físicas e mecânicas dos solos para fundações e terraplanagem.
-                        </p>
-
-                        <ul class="space-y-2 mb-4 text-sm">
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Acompanhamento Técnico em Campo</span>
-                            </li>
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Ensaio de Compactação Proctor</span>
-                            </li>
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Índice de Suporte Califórnia (ISC)</span>
-                            </li>
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Análise Granulométrica</span>
-                            </li>
-                            <li class="flex items-start text-brand-gray">
-                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                                <span>Limites de Liquidez e Plasticidade</span>
-                            </li>
-                        </ul>
-
-                        <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm">
-                            Solicite uma cotação
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Controle Tecnológico de Asfalto -->
-                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    
-                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
-                        <img src="images/ASFALTO.jpg" 
-                             alt="Controle Tecnológico de Asfalto" 
-                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-                    
-                    <div class="p-6 pt-0">
-                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
-                        Controle Tecnológico de Asfalto
-                    </h3>
-                    
-                    <p class="text-brand-gray mb-4 leading-relaxed text-sm">
-                        Ensaios especializados para controle de qualidade de misturas asfálticas e pavimentos.
-                    </p>
-
-                    <ul class="space-y-2 mb-4 text-sm">
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Ensaio Marshall</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Granulometria e Extração de Betume</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Extração de CP's com Sonda Rotativa</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Viscosidade Saybolt Furol</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Mancha de Areia e Mosaico TSD</span>
-                        </li>
-                    </ul>
-
-                    <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm">
-                        Solicite uma cotação
-                    </button>
-                    </div>
-                </div>
-
-                <!-- Ensaio de Agregados -->
-                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    
-                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
-                        <img src="images/AGREGADOS.jpg" 
-                             alt="Ensaio de Agregados" 
-                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-                    
-                    <div class="p-6 pt-0">
-                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
-                            Ensaio de Agregados
-                        </h3>
-                    
-                    <p class="text-brand-gray mb-4 leading-relaxed text-sm">
-                        Caracterização completa de agregados para uso em concretos e misturas asfálticas.
-                    </p>
-
-                    <ul class="space-y-2 mb-4 text-sm">
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Granulometria por Peneiramento</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Densidade Real/Massa Específica</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Massa Unitária/Densidade Aparente</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Índice de Forma e Lamelaridade</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Equivalente de Areia</span>
-                        </li>
-                    </ul>
-
-                    <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm">
-                        Solicite uma cotação
-                    </button>
-                    </div>
-                </div>
-
-                <!-- Infraestrutura -->
-                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    
-                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
-                        <img src="images/INFRA.jpg" 
-                             alt="Infraestrutura" 
-                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-                    
-                    <div class="p-6 pt-0">
-                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
-                            Infraestrutura
-                        </h3>
-                    
-                    <p class="text-brand-gray mb-4 leading-relaxed text-sm">
-                        Execução de obras de infraestrutura urbana e rodoviária com equipamentos modernos.
-                    </p>
-
-                    <ul class="space-y-2 mb-4 text-sm">
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Manutenção e Conservação de Rodovias</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Terraplanagem</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Pavimentação</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Dispositivos de Drenagem</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Obras de Arte Especiais</span>
-                        </li>
-                    </ul>
-
-                    <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm">
-                        Solicite uma cotação
-                    </button>
-                    </div>
-                </div>
-
-                <!-- Construção Civil -->
-                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
-                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                    
-                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
-                        <img src="images/CIVIL.jpg" 
-                             alt="Construção Civil" 
-                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                    </div>
-                    
-                    <div class="p-6 pt-0">
-                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
-                            Construção Civil
-                        </h3>
-                    
-                    <p class="text-brand-gray mb-4 leading-relaxed text-sm">
-                        Execução completa de obras residenciais, comerciais e industriais com qualidade garantida.
-                    </p>
-
-                    <ul class="space-y-2 mb-4 text-sm">
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Execução de Obras</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Reformas e Ampliações</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Projetos Estruturais</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Acompanhamento Técnico</span>
-                        </li>
-                        <li class="flex items-start text-brand-gray">
-                            <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
-                            <span>Gestão de Obras</span>
-                        </li>
-                    </ul>
-
-                    <button class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm">
-                        Solicite uma cotação
-                    </button>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -894,6 +616,394 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-gradient-to-b from-white to-gray-50 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <div class="inline-flex items-center justify-center p-2 mb-4 bg-white rounded-full shadow-sm">
+                    <div class="flex items-center justify-center w-10 h-10 bg-brand-orange rounded-full">
+                        <i class="text-white fas fa-tools"></i>
+                    </div>
+                </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Serviços</h2>
+                <div class="section-divider mb-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Controle Tecnológico de Concreto -->
+                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
+                        <img src="images/CONCRETO.jpg" 
+                             alt="Controle Tecnológico de Concreto" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6 pt-0 service-card-content">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                            Controle Tecnológico de Concreto
+                        </h3>
+                        
+                        <p class="text-brand-gray mb-4 leading-relaxed text-sm service-card-description">
+                            Ensaios completos para controle de qualidade do concreto, garantindo conformidade técnica.
+                        </p>
+
+                        <div class="service-items-container mb-4">
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Ensaios de Resistência à Compressão (Corpos de prova 5x10, 10x20; blocos estruturais; pavers e bloquetes sextavados)</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Determinação de Resistência à Tração na Flexão de Corpos de Prova Prismáticos</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Acompanhamento Técnico</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Slump Test</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Moldagem de Corpos de Prova</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Extração de Testemunhos</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Concreto." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                            Solicite uma proposta
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Controle Tecnológico de Solos -->
+                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
+                        <img src="images/SOLOS.jpg" 
+                             alt="Controle Tecnológico de Solos" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6 pt-0 service-card-content">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                            Controle Tecnológico de Solos
+                        </h3>
+                        
+                        <p class="text-brand-gray mb-4 leading-relaxed text-sm service-card-description">
+                            Análises completas de características físicas e mecânicas dos solos para fundações e terraplanagem.
+                        </p>
+
+                        <div class="service-items-container mb-4">
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Acompanhamento Técnico em Campo</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Ensaio Compactação de Proctor</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Ensaio de Determinação do Índice de Suporte Califórnia</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Ensaio Análise Granulométrica por Peneiramento</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Limite de Liquidez</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Limite de Plasticidade</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Ensaio Granulométria por sedimentação</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Ensaio Densidade IN SITU</span>
+                                </li>
+                                <li class="flex items-start text-brand-gray">
+                                    <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                    <span>Determinação da Umidade com emprego do Speed</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Solos." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                            Solicite uma proposta
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Controle Tecnológico de Asfalto -->
+                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
+                        <img src="images/ASFALTO.jpg" 
+                             alt="Controle Tecnológico de Asfalto" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6 pt-0 service-card-content">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                        Controle Tecnológico de Asfalto
+                    </h3>
+                    
+                    <p class="text-brand-gray mb-4 leading-relaxed text-sm service-card-description">
+                        Ensaios especializados para controle de qualidade de misturas asfálticas e pavimentos.
+                    </p>
+
+                    <div class="service-items-container mb-4">
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio Marshall</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Granulometria</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaios de Extração de Betume</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Extração de CP's com Sonda Rotativa (Grau de Compactação e Espessura da Camada)</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Determinação de Taxas de Aplicação</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Viscosidade Saybolt Furol</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Resíduo por Evaporação</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Peneiração Asfáltica</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Ponto de Fulgor</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de determinação do Ponto de Amolecimento</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Índice de Irregularidade Longitudinal – Merlin</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Mancha de Areia</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Elaboração de Mosaico TSD</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Elaboração de Traços para Misturas Asfálticas</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Asfalto." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                        Solicite uma proposta
+                    </a>
+                    </div>
+                </div>
+
+                <!-- Ensaio de Agregados -->
+                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
+                        <img src="images/AGREGADOS.jpg" 
+                             alt="Ensaio de Agregados" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6 pt-0 service-card-content">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                            Ensaio de Agregados
+                        </h3>
+                    
+                    <p class="text-brand-gray mb-4 leading-relaxed text-sm service-card-description">
+                        Caracterização completa de agregados para uso em concretos e misturas asfálticas.
+                    </p>
+
+                    <div class="service-items-container mb-4">
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Granulometria por peneiramento</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Granulometria por Sedimentação</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Densidade Real/Massa Específica</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Massa Unitária/Densidade Aparente</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaios de Impurezas Orgânicas</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Índice de Forma</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Índice de Lamelaridade</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Adesividade ao Ligante Asfáltico</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Ensaio de Equivalente de Areia</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Ensaio de Agregados." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                        Solicite uma proposta
+                    </a>
+                    </div>
+                </div>
+
+                <!-- Infraestrutura -->
+                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
+                        <img src="images/INFRA.jpg" 
+                             alt="Infraestrutura" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6 pt-0 service-card-content">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                            Infraestrutura
+                        </h3>
+                    
+                    <p class="text-brand-gray mb-4 leading-relaxed text-sm service-card-description">
+                        Execução de obras de infraestrutura urbana e rodoviária com equipamentos modernos.
+                    </p>
+
+                    <div class="service-items-container mb-4">
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Manutenção e conservação de Rodovias</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Terraplanagem</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Pavimentação</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Execução de Dispositivos de Drenagem</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Obras de Arte Especiais</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Recomposição de Erosões</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para serviços de Infraestrutura." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                        Solicite uma proposta
+                    </a>
+                    </div>
+                </div>
+
+                <!-- Construção Civil -->
+                <div class="service-card group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden card-hover-glow animate-on-scroll">
+                    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-orange to-brand-orange-light transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    
+                    <div class="relative overflow-hidden rounded-t-2xl mb-4">
+                        <img src="images/CIVIL.jpg" 
+                             alt="Construção Civil" 
+                             class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    
+                    <div class="p-6 pt-0 service-card-content">
+                        <h3 class="text-lg font-bold text-gray-800 mb-3 group-hover:text-brand-orange transition-colors duration-300">
+                            Construção Civil
+                        </h3>
+                    
+                    <p class="text-brand-gray mb-4 leading-relaxed text-sm service-card-description">
+                        Execução completa de obras residenciais, comerciais e industriais com qualidade garantida.
+                    </p>
+
+                    <div class="service-items-container mb-4">
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Execução de obras</span>
+                            </li>
+                            <li class="flex items-start text-brand-gray">
+                                <i class="fas fa-check-circle text-brand-orange mr-2 text-xs mt-1 flex-shrink-0"></i>
+                                <span>Reformas</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para serviços de Construção Civil." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                        Solicite uma proposta
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
     <!-- Values Section -->
     <section class="py-24 bg-white relative">
         <div class="container mx-auto px-4">
@@ -979,12 +1089,9 @@
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 mb-2">Controle Tecnológico em Supermercado</h3>
-                        <p class="text-brand-gray mb-4">Execução dos serviços de terraplenagem para implantação de parque solar em Montes Claros/MG – 2023.</p>
+                        <p class="text-brand-gray mb-4">Execução do controle tecnológico de solos e concreto na construção de supermercado. – 2025</p>
                         <div class="flex items-center justify-between">
-                            <span class="text-sm text-brand-orange font-medium">Concluído em 2023</span>
-                            <button class="text-brand-orange hover:text-brand-orange-light transition-colors">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
+                            <span class="text-sm text-brand-orange font-medium">Concluído em 2025</span>
                         </div>
                     </div>
                 </div>
@@ -1006,9 +1113,6 @@
                         <p class="text-brand-gray mb-4">Execução dos serviços de terraplenagem para implantação de parque solar em Montes Claros/MG – 2023.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-sm text-brand-orange font-medium">Concluído em 2023</span>
-                            <button class="text-brand-orange hover:text-brand-orange-light transition-colors">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -1030,24 +1134,8 @@
                         <p class="text-brand-gray mb-4">Execução de serviços de reforma em edifício particular - 2023.</p>
                         <div class="flex items-center justify-between">
                             <span class="text-sm text-brand-orange font-medium">Concluído em 2023</span>
-                            <button class="text-brand-orange hover:text-brand-orange-light transition-colors">
-                                <i class="fas fa-arrow-right"></i>
-                            </button>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- CTA Section -->
-            <div class="mt-16 text-center animate-on-scroll">
-                <div class="bg-gradient-to-r from-brand-orange to-brand-orange-light rounded-2xl p-8 text-white">
-                    <h3 class="text-2xl font-bold mb-4">Tem um projeto em mente?</h3>
-                    <p class="text-orange-100 mb-6 max-w-2xl mx-auto">
-                        Nossa equipe está pronta para transformar suas ideias em realidade. Entre em contato e vamos conversar sobre seu próximo projeto.
-                    </p>
-                    <button onclick="scrollToSection('contato')" class="bg-white text-brand-orange px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
-                        Iniciar Projeto
-                    </button>
                 </div>
             </div>
         </div>
@@ -1088,7 +1176,7 @@
                                     </div>
                                     <div>
                                         <p class="font-semibold text-white">Telefone</p>
-                                        <p class="text-gray-200">(XX) XXXX-XXXX</p>
+                                        <p class="text-gray-200">(38) 3212-0667</p>
                                         <p class="text-gray-300 text-sm">Segunda a Sexta, 8h às 18h</p>
                                     </div>
                                 </div>
@@ -1100,7 +1188,7 @@
                                     </div>
                                     <div>
                                         <p class="font-semibold text-white">E-mail</p>
-                                        <p class="text-gray-200">contato@carvalhoengenharia.com.br</p>
+                                        <p class="text-gray-200">laboratorio@carvalhoeng.com</p>
                                         <p class="text-gray-300 text-sm">Resposta em até 24h</p>
                                     </div>
                                 </div>
@@ -1112,8 +1200,8 @@
                                     </div>
                                     <div>
                                         <p class="font-semibold text-white">Endereço</p>
-                                        <p class="text-gray-200">Rua da Engenharia, 123 - Centro</p>
-                                        <p class="text-gray-300 text-sm">Cidade - Estado, CEP 00000-000</p>
+                                        <p class="text-gray-200">Avenida Feliciano Martins de Freitas, 100</p>
+                                        <p class="text-gray-300 text-sm">Vila Regina, Montes Claros - MG, CEP 39400-207</p>
                                     </div>
                                 </div>
 
@@ -1124,28 +1212,14 @@
                                     </div>
                                     <div>
                                         <p class="font-semibold text-white">WhatsApp</p>
-                                        <p class="text-gray-200">(XX) 9XXXX-XXXX</p>
+                                        <p class="text-gray-200">(38) 99722-3672</p>
                                         <p class="text-gray-300 text-sm">Atendimento rápido</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Social Media -->
-                        <div>
-                            <h4 class="text-lg font-semibold mb-4 text-white">Siga-nos</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300 group">
-                                    <i class="fab fa-facebook text-white group-hover:scale-110 transition-transform duration-300"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300 group">
-                                    <i class="fab fa-instagram text-white group-hover:scale-110 transition-transform duration-300"></i>
-                                </a>
-                                <a href="#" class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300 group">
-                                    <i class="fab fa-linkedin text-white group-hover:scale-110 transition-transform duration-300"></i>
-                                </a>
-                            </div>
-                        </div>
+                    
                     </div>
 
                     <!-- Contact Form -->
@@ -1226,9 +1300,9 @@
     <!-- Footer -->
     <footer class="bg-brand-gray py-12 border-t border-gray-700 relative">
         <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
                 <!-- Company Info -->
-                <div class="md:col-span-2">
+                <div>
                     <div class="flex items-center mb-4">
                         <div class="w-auto flex items-center justify-center mr-3">
                             <img src="logo_carvalho.svg" alt="Logo Carvalho Engenharia" class="h-16 w-auto brightness-0 invert" style="max-width:200px;">
@@ -1238,27 +1312,10 @@
                         Soluções completas em controle tecnológico, construção civil e infraestrutura com foco na excelência, inovação e sustentabilidade.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300">
-                            <i class="fab fa-facebook text-white"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300">
+                        <a href="https://www.instagram.com/carvalho.engenharia/" target="_blank" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300">
                             <i class="fab fa-instagram text-white"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-brand-orange transition-colors duration-300">
-                            <i class="fab fa-linkedin text-white"></i>
-                        </a>
                     </div>
-                </div>
-
-                <!-- Services -->
-                <div>
-                    <h4 class="text-lg font-semibold text-white mb-4">Serviços</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300">Controle Tecnológico</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300">Construção Civil</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300">Infraestrutura</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-brand-orange transition-colors duration-300">Consultoria</a></li>
-                    </ul>
                 </div>
 
                 <!-- Contact -->
@@ -1267,15 +1324,15 @@
                     <ul class="space-y-2">
                         <li class="text-gray-400">
                             <i class="fas fa-phone mr-2 text-white"></i>
-                            (XX) XXXX-XXXX
+                            (38) 3212-0667
                         </li>
                         <li class="text-gray-400">
                             <i class="fas fa-envelope mr-2 text-white"></i>
-                            contato@carvalhoengenharia.com.br
+                            laboratorio@carvalhoeng.com
                         </li>
                         <li class="text-gray-400">
                             <i class="fas fa-map-marker-alt mr-2 text-white"></i>
-                            Rua da Engenharia, 123
+                            Av. Feliciano M. de Freitas, 100 - Vila Regina
                         </li>
                     </ul>
                 </div>
