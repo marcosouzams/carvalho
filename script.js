@@ -102,32 +102,6 @@ function animateCounters() {
     });
 }
 
-// Função para validação de formulário
-function validateForm() {
-    const form = document.getElementById('contact-form');
-    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
-    let isValid = true;
-    
-    inputs.forEach(input => {
-        if (!input.value.trim()) {
-            isValid = false;
-            input.classList.add('border-red-500');
-            input.classList.remove('border-white/20');
-            
-            // Adicionar shake animation
-            input.style.animation = 'shake 0.5s ease-in-out';
-            setTimeout(() => {
-                input.style.animation = '';
-            }, 500);
-        } else {
-            input.classList.remove('border-red-500');
-            input.classList.add('border-white/20');
-        }
-    });
-    
-    return isValid;
-}
-
 // Função para mostrar notificação
 function showNotification(message, type = 'success') {
     const notification = document.createElement('div');
@@ -372,6 +346,167 @@ function addShakeAnimation() {
         }
     `;
     document.head.appendChild(style);
+}
+
+// Função para o formulário de contato com EmailJS
+function initContactForm() {
+    // Inicializar EmailJS
+    emailjs.init('FOobaEy9qgscdkpLb'); // Chave pública configurada
+
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitIcon = document.getElementById('submit-icon');
+    const submitLoading = document.getElementById('submit-loading');
+    const successMessage = document.getElementById('form-success');
+    const errorMessage = document.getElementById('form-error');
+
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Mostrar loading
+            submitBtn.disabled = true;
+            submitText.style.display = 'none';
+            submitIcon.style.display = 'none';
+            submitLoading.style.display = 'flex';
+            
+            // Esconder mensagens anteriores
+            successMessage.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+
+            try {
+                // Coletar dados do formulário
+                const templateParams = {
+                    user_name: document.getElementById('user_name').value,
+                    user_email: document.getElementById('user_email').value,
+                    user_phone: document.getElementById('user_phone').value || 'Não informado',
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toLocaleString('pt-BR', {
+                        timeZone: 'America/Sao_Paulo',
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                };
+
+                // Enviar email usando EmailJS
+                const response = await emailjs.send(
+                    'service_vnc49ef',    // Service ID configurado
+                    'template_w6zh37e',   // Template ID configurado
+                    templateParams
+                );
+
+                if (response.status === 200) {
+                    // Sucesso
+                    successMessage.classList.remove('hidden');
+                    form.reset();
+                    
+                    // Scroll para a mensagem de sucesso
+                    successMessage.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+
+                    // Limpar validações visuais
+                    clearFormValidation();
+                } else {
+                    throw new Error('Erro no envio');
+                }
+            } catch (error) {
+                // Erro
+                errorMessage.classList.remove('hidden');
+                console.error('Erro ao enviar formulário:', error);
+                
+                // Scroll para a mensagem de erro
+                errorMessage.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest' 
+                });
+            } finally {
+                // Resetar botão
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitText.style.display = 'inline';
+                    submitIcon.style.display = 'inline';
+                    submitLoading.style.display = 'none';
+                }, 1000);
+            }
+        });
+    }
+}
+
+// Função para limpar validações visuais
+function clearFormValidation() {
+    const form = document.getElementById('contact-form');
+    if (form) {
+        const inputs = form.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.classList.remove('valid', 'invalid');
+            input.style.borderColor = '';
+        });
+    }
+}
+
+// Função para validação em tempo real
+function initFormValidation() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+    
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.classList.contains('invalid')) {
+                validateField(this);
+            }
+        });
+    });
+}
+
+function validateField(field) {
+    const isValid = field.checkValidity();
+    
+    if (isValid) {
+        field.classList.remove('invalid');
+        field.classList.add('valid');
+        field.style.borderColor = '#10B981'; // Verde
+    } else {
+        field.classList.remove('valid');
+        field.classList.add('invalid');
+        field.style.borderColor = '#EF4444'; // Vermelho
+    }
+    
+    return isValid;
+}
+
+// Função para formatar telefone automaticamente
+function initPhoneFormatter() {
+    const phoneInput = document.getElementById('user_phone');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length <= 11) {
+                if (value.length <= 2) {
+                    value = value.replace(/(\d{0,2})/, '($1');
+                } else if (value.length <= 7) {
+                    value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+                } else {
+                    value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+                }
+            }
+            
+            e.target.value = value;
+        });
+    }
 }
 
 // Event Listeners
@@ -623,4 +758,7 @@ function initializeTooltips() {
 document.addEventListener('DOMContentLoaded', () => {
     initializeSearch();
     initializeTooltips();
+    initContactForm();
+    initFormValidation();
+    initPhoneFormatter();
 });

@@ -5,8 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carvalho Engenharia - Construindo o futuro com inovação e qualidade</title>
     <meta name="description" content="Soluções completas em engenharia civil, elétrica e mecânica. Projetos, execução e acompanhamento de obras com excelência.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://carvalhoengenharia.com.br">
+    <meta property="og:title" content="Carvalho Engenharia - Construindo o futuro com inovação e qualidade">
+    <meta property="og:description" content="Soluções precisas em controle tecnológico de solos, concreto e asfalto. Construção civil e infraestrutura com foco em qualidade, segurança e responsabilidade técnica.">
+    <meta property="og:image" content="https://carvalhoengenharia.com.br/images/BANNER.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Carvalho Engenharia">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://carvalhoengenharia.com.br">
+    <meta property="twitter:title" content="Carvalho Engenharia - Construindo o futuro com inovação e qualidade">
+    <meta property="twitter:description" content="Soluções precisas em controle tecnológico de solos, concreto e asfalto. Construção civil e infraestrutura com qualidade garantida.">
+    <meta property="twitter:image" content="https://carvalhoengenharia.com.br/images/BANNER.jpg">
+    
+    <!-- WhatsApp -->
+    <meta property="whatsapp:title" content="Carvalho Engenharia">
+    <meta property="whatsapp:description" content="Controle tecnológico de solos, concreto e asfalto. Construção civil e infraestrutura com excelência desde 2019.">
+    <meta property="whatsapp:image" content="https://carvalhoengenharia.com.br/images/BANNER.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="author" content="Carvalho Engenharia">
+    <meta name="keywords" content="controle tecnológico, engenharia civil, solos, concreto, asfalto, construção civil, infraestrutura, Montes Claros, MG">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://carvalhoengenharia.com.br">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -452,6 +488,54 @@
         
         .text-balance {
             text-wrap: balance;
+        }
+        
+        /* Estilos para o select do formulário */
+        .form-select {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 12px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            appearance: none;
+        }
+        
+        .form-select option {
+            background-color: #374151;
+            color: white;
+            padding: 12px;
+            font-weight: normal;
+        }
+        
+        .form-select option:hover,
+        .form-select option:focus {
+            background-color: #ff6600;
+            color: white;
+        }
+        
+        .form-select option:disabled {
+            background-color: #6b7280;
+            color: #9ca3af;
+        }
+        
+        .form-select option:checked {
+            background-color: #ff6600;
+            color: white;
+        }
+        
+        /* Estilo específico para webkit browsers */
+        .form-select::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .form-select::-webkit-scrollbar-track {
+            background: #374151;
+        }
+        
+        .form-select::-webkit-scrollbar-thumb {
+            background: #ff6600;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -1224,70 +1308,101 @@
 
                     <!-- Contact Form -->
                     <div class="glass-effect p-6 sm:p-8 rounded-2xl border border-white/10 animate-on-scroll backdrop-blur-strong">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Envie uma mensagem</h3>
+                        
+                        <!-- Form Success Message -->
+                        <div id="form-success" class="hidden mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg backdrop-blur-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <p class="text-green-100">Mensagem enviada com sucesso! Retornaremos em breve.</p>
+                            </div>
+                        </div>
+
+                        <!-- Form Error Message -->
+                        <div id="form-error" class="hidden mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg backdrop-blur-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-exclamation-circle text-red-400 mr-3"></i>
+                                <p class="text-red-100">Erro ao enviar mensagem. Tente novamente ou entre em contato pelo WhatsApp.</p>
+                            </div>
+                        </div>
+
                         <form id="contact-form" class="space-y-6">
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="nome" class="block text-sm font-medium text-white mb-2">
-                                        Nome completo *
-                                    </label>
-                                    <input type="text" id="nome" name="nome" required
-                                           class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300"
-                                           placeholder="Seu nome completo">
+                                    <label for="user_name" class="block text-sm font-medium text-gray-300 mb-2">Nome</label>
+                                    <input 
+                                        type="text" 
+                                        id="user_name" 
+                                        name="user_name" 
+                                        required
+                                        class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent backdrop-blur-sm transition-all duration-300"
+                                        placeholder="Seu nome completo">
                                 </div>
-
                                 <div>
-                                    <label for="telefone" class="block text-sm font-medium text-white mb-2">
-                                        Telefone
-                                    </label>
-                                    <input type="tel" id="telefone" name="telefone"
-                                           class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300"
-                                           placeholder="(XX) XXXXX-XXXX">
+                                    <label for="user_email" class="block text-sm font-medium text-gray-300 mb-2">E-mail</label>
+                                    <input 
+                                        type="email" 
+                                        id="user_email" 
+                                        name="user_email" 
+                                        required
+                                        class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent backdrop-blur-sm transition-all duration-300"
+                                        placeholder="seu@email.com">
                                 </div>
                             </div>
 
                             <div>
-                                <label for="email" class="block text-sm font-medium text-white mb-2">
-                                    E-mail *
-                                </label>
-                                <input type="email" id="email" name="email" required
-                                       class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300"
-                                       placeholder="seu@email.com">
+                                <label for="user_phone" class="block text-sm font-medium text-gray-300 mb-2">Telefone</label>
+                                <input 
+                                    type="tel" 
+                                    id="user_phone" 
+                                    name="user_phone"
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent backdrop-blur-sm transition-all duration-300"
+                                    placeholder="(00) 00000-0000">
                             </div>
 
                             <div>
-                                <label for="servico" class="block text-sm font-medium text-white mb-2">
-                                    Serviço de interesse
-                                </label>
-                                <select id="servico" name="servico"
-                                        class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300">
-                                    <option value="">Selecione um serviço</option>
-                                    <option value="civil">Engenharia Civil</option>
-                                    <option value="eletrica">Engenharia Elétrica</option>
-                                    <option value="mecanica">Engenharia Mecânica</option>
-                                    <option value="consultoria">Consultoria</option>
-                                    <option value="outro">Outro</option>
+                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Assunto</label>
+                                <select 
+                                    id="subject" 
+                                    name="subject" 
+                                    required
+                                    class="form-select w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent backdrop-blur-sm transition-all duration-300">
+                                    <option value="" disabled selected>Selecione o assunto</option>
+                                    <option value="Controle Tecnológico de Concreto">Controle Tecnológico de Concreto</option>
+                                    <option value="Controle Tecnológico de Solos">Controle Tecnológico de Solos</option>
+                                    <option value="Controle Tecnológico de Asfalto">Controle Tecnológico de Asfalto</option>
+                                    <option value="Ensaio de Agregados">Ensaio de Agregados</option>
+                                    <option value="Infraestrutura">Infraestrutura</option>
+                                    <option value="Construção Civil">Construção Civil</option>
+                                    <option value="Orçamento Geral">Orçamento Geral</option>
+                                    <option value="Outros">Outros</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label for="mensagem" class="block text-sm font-medium text-white mb-2">
-                                    Mensagem *
-                                </label>
-                                <textarea id="mensagem" name="mensagem" required rows="4"
-                                          class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent transition-all duration-300 resize-none"
-                                          placeholder="Conte-nos sobre seu projeto..."></textarea>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="4" 
+                                    required
+                                    class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-transparent backdrop-blur-sm transition-all duration-300 resize-none"
+                                    placeholder="Descreva seu projeto ou necessidade..."></textarea>
                             </div>
 
-                            <div class="flex items-start">
-                                <input type="checkbox" id="aceito" name="aceito" required class="mt-1 mr-3">
-                                <label for="aceito" class="text-sm text-white">
-                                    Aceito os <a href="#" class="text-brand-orange hover:underline">termos de uso</a> e <a href="#" class="text-brand-orange hover:underline">política de privacidade</a> *
-                                </label>
-                            </div>
-
-                            <button type="submit"
-                                    class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-4 rounded-lg font-semibold hover:from-brand-orange-light hover:to-brand-orange transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group">
-                                <span class="mr-2">Enviar mensagem</span>
+                            <button 
+                                type="submit" 
+                                id="submit-btn"
+                                class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed">
+                                <span id="submit-text">Enviar Mensagem</span>
+                                <i id="submit-icon" class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                                <div id="submit-loading" class="hidden">
+                                    <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                                    Enviando...
+                                </div>
+                            </button>
+                        </form>
+                    </div>
                                 <i class="fas fa-paper-plane group-hover:translate-x-1 transition-transform duration-300"></i>
                             </button>
                         </form>
