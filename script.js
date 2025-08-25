@@ -405,6 +405,11 @@ function initContactForm() {
                     successMessage.classList.remove('hidden');
                     form.reset();
                     
+                    // Rastrear conversão do Google Ads
+                    if (typeof gtag_report_conversion === 'function') {
+                        gtag_report_conversion();
+                    }
+                    
                     // Scroll para a mensagem de sucesso
                     successMessage.scrollIntoView({ 
                         behavior: 'smooth', 

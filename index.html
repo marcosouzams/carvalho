@@ -38,6 +38,29 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17494332059"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17494332059');
+        
+        // Função para rastrear conversões
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17494332059/InMOCLuQh4sbEJul-ZVB',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
@@ -619,7 +642,7 @@
                     </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar um orçamento para meu projeto." target="_blank" class="group bg-white text-brand-orange px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center feature-highlight">
+                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar um orçamento para meu projeto." target="_blank" onclick="return gtag_report_conversion('https://wa.me/5538997223672?text=Olá! Gostaria de solicitar um orçamento para meu projeto.');" class="group bg-white text-brand-orange px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center feature-highlight">
                             <span class="text-sm sm:text-base">Solicite um orçamento</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                         </a>
@@ -763,7 +786,7 @@
                             </ul>
                         </div>
 
-                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Concreto." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Concreto." target="_blank" onclick="return gtag_report_conversion('https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Concreto.');" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
                             Solicite uma proposta
                         </a>
                     </div>
@@ -830,7 +853,7 @@
                             </ul>
                         </div>
 
-                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Solos." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                        <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Solos." target="_blank" onclick="return gtag_report_conversion('https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Solos.');" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
                             Solicite uma proposta
                         </a>
                     </div>
@@ -917,7 +940,7 @@
                         </ul>
                     </div>
 
-                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Asfalto." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Asfalto." target="_blank" onclick="return gtag_report_conversion('https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Controle Tecnológico de Asfalto.');" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
                         Solicite uma proposta
                     </a>
                     </div>
@@ -984,7 +1007,7 @@
                         </ul>
                     </div>
 
-                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Ensaio de Agregados." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Ensaio de Agregados." target="_blank" onclick="return gtag_report_conversion('https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para Ensaio de Agregados.');" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
                         Solicite uma proposta
                     </a>
                     </div>
@@ -1039,7 +1062,7 @@
                         </ul>
                     </div>
 
-                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para serviços de Infraestrutura." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para serviços de Infraestrutura." target="_blank" onclick="return gtag_report_conversion('https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para serviços de Infraestrutura.');" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
                         Solicite uma proposta
                     </a>
                     </div>
@@ -1078,7 +1101,7 @@
                         </ul>
                     </div>
 
-                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para serviços de Construção Civil." target="_blank" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
+                    <a href="https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para serviços de Construção Civil." target="_blank" onclick="return gtag_report_conversion('https://wa.me/5538997223672?text=Olá! Gostaria de solicitar uma proposta para serviços de Construção Civil.');" class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 text-sm flex items-center justify-center">
                         Solicite uma proposta
                     </a>
                     </div>
