@@ -54,8 +54,10 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-17494332059');
-        
-        // Função para rastrear conversões
+    </script>
+    
+    <!-- Event snippet for Pixel - Clicou no botão wpp conversion page -->
+    <script>
         function gtag_report_conversion(url) {
             var callback = function () {
                 if (typeof(url) != 'undefined') {
@@ -63,7 +65,9 @@
                 }
             };
             gtag('event', 'conversion', {
-                'send_to': 'AW-17494332059/InMOCLuQh4sbEJul-ZVB',
+                'send_to': 'AW-17494332059/RAVfCL-zrI0bEJul-ZVB',
+                'value': 0.0,
+                'currency': 'BRL',
                 'event_callback': callback
             });
             return false;

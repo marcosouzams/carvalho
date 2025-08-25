@@ -20,6 +20,7 @@
 ✅ **Implementado no `<head>` do HTML**
 
 ```html
+<!-- Event snippet for Pixel - Clicou no botão wpp conversion page -->
 <script>
 function gtag_report_conversion(url) {
     var callback = function () {
@@ -28,7 +29,9 @@ function gtag_report_conversion(url) {
         }
     };
     gtag('event', 'conversion', {
-        'send_to': 'AW-17494332059/InMOCLuQh4sbEJul-ZVB',
+        'send_to': 'AW-17494332059/RAVfCL-zrI0bEJul-ZVB',
+        'value': 0.0,
+        'currency': 'BRL',
         'event_callback': callback
     });
     return false;
@@ -58,8 +61,10 @@ function gtag_report_conversion(url) {
 ## IDs de Configuração
 
 - **Conta Google Ads:** `AW-17494332059`
-- **ID de Conversão:** `AW-17494332059/InMOCLuQh4sbEJul-ZVB`
+- **ID de Conversão:** `AW-17494332059/RAVfCL-zrI0bEJul-ZVB` (Pixel - Clicou no botão wpp)
 - **Tipo de Conversão:** Leads
+- **Moeda:** BRL (Real Brasileiro)
+- **Valor Padrão:** 0.0
 
 ## Como Funciona
 
