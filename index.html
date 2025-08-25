@@ -344,6 +344,7 @@
             border-top: 3px solid #ff6600;
             border-radius: 50%;
             animation: spin 1s linear infinite;
+            margin: 0 auto;
         }
         
         @keyframes spin {
@@ -565,9 +566,9 @@
 <body class="bg-gray-50 text-brand-gray font-sans overflow-x-hidden smooth-scroll">
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loading-overlay">
-        <div class="text-center">
+        <div class="flex flex-col items-center justify-center">
             <div class="spinner mb-4"></div>
-            <p class="text-brand-gray">Carregando...</p>
+            <p class="text-brand-gray font-medium">Carregando...</p>
         </div>
     </div>
 
